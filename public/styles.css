@@ -10,3 +10,7 @@ body {
   font-family: monospace;
   color: #d4896a;
 }
+
+#ojs-barplot {
+  margin-bottom: 1rem;
+}
