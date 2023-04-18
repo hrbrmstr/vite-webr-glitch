@@ -1,19 +1,14 @@
 {
-  "name": "glitch-hello-react",
+  "name": "glitch-hello-webr",
   "version": "0.0.5",
-  "description": "A simple React single page app, built with Vite and React.",
+  "description": "",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-spring": "^9.7.1",
-    "wouter": "^2.10.0",
-    "react-helmet-async": "^1.3.0",
-    "@vitejs/plugin-react": "^3.1.0"
+    "@r-wasm/webr": "^0.1.1"
   },
   "devDependencies": {
     "vite": "^4.0.0"
@@ -24,9 +19,6 @@
   ],
   "engines": {
     "node": "14.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-react"
   },
   "glitch": {
     "projectType": "generated_static"
