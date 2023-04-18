@@ -1,4 +1,6 @@
 import { defineConfig } from "vite";
+import topLevelAwait from "vite-plugin-top-level-await";
+import rollup from "rollup"
 
 // https://vitejs.dev/config/
 export default defineConfig({
