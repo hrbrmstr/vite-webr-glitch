@@ -8,7 +8,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@r-wasm/webr": "^0.1.1"
+    "@r-wasm/webr": "^0.1.1",
+    "@observablehq/plot": "^0.6.4"
   },
   "devDependencies": {
     "vite": "^4.0.0"

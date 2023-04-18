@@ -1,14 +1,32 @@
 const statusMessage = document.getElementById("status-message")
 statusMessage.innerHTML = (crossOriginIsolated ? "🟢" : "🌕") + " WebR Loading…"
 
+import * as Plot from "@observablehq/plot";
+
 import { WebR } from '@r-wasm/webr'
 
-// this can be accessed everywhere as "webR"
 const webR = new WebR();
 await webR.init();
 
 const webRVersion = document.getElementById("webr-version")
-
 webRVersion.innerHTML = await webR.evalRString(`R.version.string`)
 
 statusMessage.innerHTML = (crossOriginIsolated ? "🟢" : "🌕") + " WebR Loaded!"
+
+const numbersDisplay = document.getElementById("numbers-display")
+const ojsBarplot = document.getElementById("ojs-barplot")
+
+function updatePlot() {
+const numbers = await webR.evalRRaw(`sample(100, 20)`, "number[]")
+numbersDisplay.innerText = numbers.join(", ")
+
+ojsBarplot.appendChild(
+  Plot.plot({
+    style: {
+      background: "#202e32",
+      color: "#dfdcb9",
+    },
+    marks: [Plot.rectY(numbers)],
+  })
+)  
+}
