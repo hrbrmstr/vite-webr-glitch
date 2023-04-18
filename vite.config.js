@@ -2,7 +2,12 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [],
+  plugins: [
+		topLevelAwait({
+			promiseExportName: "__tla",
+			promiseImportName: i => `__tla_${i}`
+		})
+  ],
   build: {
     outDir: "build"
   },
